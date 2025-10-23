@@ -10,7 +10,7 @@ const testimonials = [
   },
   {
     name: "Marcos Andrade",
-    role: "Alugou em Porto",
+    role: "Alugou em Santa Catarina",
     text:
       "Com a JoviPlanet encontrei um imóvel incrível e fechei negócio sem complicação!",
     avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=80&h=80&fit=crop&crop=faces",
