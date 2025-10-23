@@ -6,21 +6,21 @@ const testimonials = [
     role: "Comprou apartamento em Lisboa",
     text:
       "Em menos de uma semana encontrei meu apartamento perfeito. Atendimento incrível!",
-    avatar: "https://i.pravatar.cc/80?img=47",
+    avatar: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=80&h=80&fit=crop&crop=faces",
   },
   {
     name: "Marcos Andrade",
     role: "Alugou em Porto",
     text:
       "Com a JoviPlanet encontrei um imóvel incrível e fechei negócio sem complicação!",
-    avatar: "https://i.pravatar.cc/80?img=12",
+    avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=80&h=80&fit=crop&crop=faces",
   },
   {
     name: "Camila Soares",
     role: "Comprou casa no Porto",
     text:
       "A equipe foi atenciosa do início ao fim. Fiz tudo online e me senti completamente seguro.",
-    avatar: "https://i.pravatar.cc/80?img=32",
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&crop=faces",
   },
 ];
 
@@ -52,7 +52,17 @@ export const Testimonials = () => {
                 “{t.text}”
               </p>
               <div className="mt-4 md:mt-5 flex items-center gap-2.5 md:gap-3">
-                <img src={t.avatar} alt={t.name} className="h-8 w-8 md:h-9 md:w-9 rounded-full object-cover ring-1 ring-black/5" />
+                <img
+                  src={t.avatar}
+                  alt={t.name}
+                  className="h-8 w-8 md:h-9 md:w-9 rounded-full object-cover ring-1 ring-black/5"
+                  onError={(e) => {
+                    const img = e.currentTarget as HTMLImageElement;
+                    if (!img.src.includes("pravatar.cc")) {
+                      img.src = "https://i.pravatar.cc/80?img=15";
+                    }
+                  }}
+                />
                 <div>
                   <p className="text-sm md:text-base font-semibold" style={{ color: "#0D3A2E" }}>{t.name}</p>
                   <p className="text-xs md:text-sm" style={{ color: "#555555" }}>{t.role}</p>
